@@ -39,6 +39,14 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func clearButtonPressed(sender: AnyObject) {
+        
+        playSound()
+        
+        resetCalculator()
+    }
+    
+    
     @IBAction func onDividePressed(sender: AnyObject) {
         
         processOperation(Operation.Divide)
@@ -150,6 +158,17 @@ class ViewController: UIViewController {
         }
         
         btnSound.play()
+    }
+    
+    func resetCalculator() {
+        
+        currentOperation = Operation.Empty
+        runningNumber = ""
+        leftValStr = ""
+        rightValStr = ""
+        result = ""
+        outputLabel.text = "0"
+        
     }
 
 
